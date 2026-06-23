@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunstar Macedon — Hero Directions</title>
+<script>document.documentElement.classList.add('js','reveal-off');</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  body { background: #cfc8ba; }
+  .dir-head { max-width: var(--maxw); margin: 0 auto; padding: 48px var(--gutter) 8px; }
+  .dir-head h1 { font-size: clamp(2rem,4vw,3rem); }
+  .dir-head p { color: var(--ink-soft); max-width: 60ch; margin-top: 12px; }
+  .dir-wrap { max-width: 1180px; margin: 0 auto; padding: 24px var(--gutter) 80px; display: flex; flex-direction: column; gap: 56px; }
+  .dir { }
+  .dir-label { display: flex; align-items: baseline; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
+  .dir-label .tag { font-family: var(--mono); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+    background: var(--ink); color: var(--paper); padding: .4em .8em; border-radius: 2px; }
+  .dir-label h2 { font-size: 1.5rem; }
+  .dir-label .desc { font-family: var(--sans); color: #4a4438; font-size: .92rem; }
+  .frame-card { background: var(--paper); border-radius: 6px; overflow: hidden; box-shadow: 0 24px 60px -28px rgba(40,20,10,.5);
+    border: 1px solid rgba(0,0,0,.08); }
+  /* mini nav used inside each preview */
+  .mininav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 30px;
+    border-bottom: 1px solid var(--line); }
+  .mininav .brand .word { font-size: 1rem; }
+  .mininav .brand .mark { width: 34px; height: 34px; }
+  .mininav .mlinks { display: flex; gap: 22px; font-family: var(--mono); font-size: .8rem; color: var(--ink-soft); }
+  .heroB .mininav, .heroBwrap .mininav { border-color: rgba(244,239,226,.15); }
+  .heroBwrap .mininav .mlinks { color: #cabfa9; }
+  .heroBwrap .mininav .brand .word { color: var(--paper); }
+  .pv-hero { position: relative; min-height: 520px; display: grid; place-items: center; }
+  @media (max-width: 760px){ .mininav .mlinks { display:none; } }
+</style>
+</head>
+<body>
+
+<div class="dir-head">
+  <span class="kicker">Pick a direction</span>
+  <h1 style="margin-top:14px;">Three hero / style directions</h1>
+  <p>Same brand system — three different ways to lead. Tell me which one (or mix of pieces) you want, and I'll carry it through every page. Direction A is what the live Home page currently uses.</p>
+</div>
+
+<div class="dir-wrap">
+
+  <!-- ============ A ============ -->
+  <section class="dir">
+    <div class="dir-label">
+      <span class="tag">A</span>
+      <h2>The Atrium</h2>
+      <span class="desc">Editorial split — confident headline left, the mosaic sun as a living watermark right. Calm, premium, scannable.</span>
+    </div>
+    <div class="frame-card">
+      <div class="mininav">
+        <a class="brand" href="#"><span class="mark" data-sunstar data-size="34" data-detail="false"></span><span class="word">SUNSTAR MACEDON</span></a>
+        <div class="mlinks"><span>Services</span><span>Work</span><span>About</span><span>Contact</span></div>
+        <a class="btn btn-primary" style="padding:.6em 1em;font-size:.78rem;" href="#">Book a call →</a>
+      </div>
+      <div class="hero" style="padding:54px 30px 64px;min-height:460px;">
+        <div class="hero-sun" style="right:-8%;opacity:1;" aria-hidden="true"><span data-sunstar data-size="520"></span></div>
+        <div class="wrap hero-inner" style="padding-inline:0;">
+          <div class="hero-copy" style="max-width:560px;">
+            <span class="kicker">Tech studio · founded 2025</span>
+            <h1 style="font-size:clamp(2.4rem,5vw,4rem);margin:18px 0 20px;">Engineering,<br><span class="hl">secured.</span><br>Built tile by tile.</h1>
+            <p class="lede" style="max-width:44ch;">We find the cracks before attackers do, ship clean code on time, and render 3D that looks the part.</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="#">Book a call →</a><a class="btn btn-ghost" href="#">See what we do</a></div>
+          </div>
+        </div>
+        <div class="mosaic-rule" aria-hidden="true" style="position:absolute;bottom:0;left:0;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ B ============ -->
+  <section class="dir heroBwrap">
+    <div class="dir-label">
+      <span class="tag">B</span>
+      <h2>The Immersion</h2>
+      <span class="desc">Dramatic dark field — the sun glows behind the words like a relic under a spotlight. Bold, cinematic, memorable.</span>
+    </div>
+    <div class="frame-card">
+      <div class="heroB" style="min-height:584px;">
+        <div class="mosaic-rule" aria-hidden="true"></div>
+        <div class="mininav" style="position:absolute;top:0;left:0;right:0;z-index:3;">
+          <a class="brand" href="#"><span class="mark" data-sunstar data-size="34" data-detail="false"></span><span class="word">SUNSTAR MACEDON</span></a>
+          <div class="mlinks"><span>Services</span><span>Work</span><span>About</span><span>Contact</span></div>
+          <a class="btn btn-gold" style="padding:.6em 1em;font-size:.78rem;" href="#">Book a call →</a>
+        </div>
+        <div class="heroB-sun" aria-hidden="true"><span data-sunstar data-size="720" data-svgclass="sun-spin"></span></div>
+        <div class="heroB-inner">
+          <span class="kicker center">Test · Build · Render</span>
+          <h1 style="font-size:clamp(2.6rem,6vw,5rem);margin-top:18px;">Find the cracks.<br><span class="hl">Build it solid.</span></h1>
+          <p class="lede">A small, sharp team for testing &amp; security, development, and 3D — no bloated teams, no hand-holding.</p>
+          <div class="hero-actions"><a class="btn btn-gold" href="#">Book a call →</a><a class="btn btn-ghost" href="#">See the work</a></div>
+        </div>
+        <div class="mosaic-rule" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ C ============ -->
+  <section class="dir">
+    <div class="dir-label">
+      <span class="tag">C</span>
+      <h2>The Inscription</h2>
+      <span class="desc">Monumental and framed — a mosaic tile border wraps the page like an artifact; the sun sits as a seal above carved Roman capitals.</span>
+    </div>
+    <div class="frame-card">
+      <div class="heroC">
+        <div class="tile-frame">
+          <span class="fr fr-t"></span><span class="fr fr-b"></span><span class="fr fr-l"></span><span class="fr fr-r"></span>
+          <div class="heroC-seal" aria-hidden="true"><span data-sunstar data-size="132" data-svgclass="sun-spin"></span></div>
+          <span class="kicker center">Tech studio · founded 2025</span>
+          <h1>Engineering, <span class="hl">secured.</span></h1>
+          <p class="lede">Testing &amp; security, development, and 3D design — crafted tile by tile, delivered on time.</p>
+          <div class="rule-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="hero-actions"><a class="btn btn-primary" href="#">Book a call →</a><a class="btn btn-ghost" href="#">Explore services</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="assets/sunstar.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+.hero-b {
+    background: radial-gradient(
+        125% 105% at 50% 36%,
+        #2C2118 0%,
+        var(--ink) 46%,
+        var(--d-base) 100%
+    );
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    min-height: clamp(560px, 84vh, 820px);
+}
+
+.hero-b .mosaic-rule:first-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.hero-b .mosaic-rule:last-of-type {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.hero-b-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            36% 34% at 50% 46%,
+            rgba(239, 194, 94, .28),
+            transparent 70%
+        ),
+        radial-gradient(
+            56% 52% at 50% 50%,
+            rgba(190, 58, 43, .36),
+            transparent 72%
+        );
+}
+
+.hero-b-sun {
+    position: absolute;
+    z-index: 0;
+    width: 760px;
+    max-width: 118%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .36;
+    filter: saturate(1.04)
+            drop-shadow(0 0 70px rgba(190, 58, 43, .45));
+}
+
+.hero-b-sun span,
+.hero-b-sun svg {
+    width: 100%;
+    height: auto;
+}
+
+.hero-b::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(
+        62% 66% at 50% 48%,
+        rgba(28, 23, 18, .42) 0%,
+        rgba(28, 23, 18, .34) 42%,
+        rgba(28, 23, 18, .93) 100%
+    );
+}
+
+.hero-b-inner {
+    position: relative;
+    z-index: 100;
+    max-width: 880px;
+    padding: clamp(96px, 13vw, 150px) var(--gutter);
+}
+.hero-b-inner *{
+    z-index: 9999;
+}
+.hero-b .kicker {
+    justify-content: center;
+}
+
+.hero-b h1 {
+    color: #fff7ee;
+    font-size: clamp(2.7rem, 6.6vw, 5.4rem);
+    margin: 22px auto 0;
+    text-shadow: 0 2px 40px rgba(0, 0, 0, .45);
+}
+
+.hero-b h1 .hl {
+    color: var(--gold-lite);
+}
+
+.hero-b .lede {
+    color: #E3D8C4;
+    margin: 26px auto 0;
+    max-width: 52ch;
+}
+
+.hero-b .hero-actions {
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.hero-b .btn-ghost {
+    border-color: #fff7ee;
+    color: #fff7ee;
+}
+
+.hero-b .btn-ghost:hover {
+    background: #fff7ee;
+    color: var(--ink);
+}
+
+.hero-b .tess-dots {
+    justify-content: center;
+    margin: 40px auto 0;
+}

@@ -170,6 +170,43 @@ section { position: relative; }
 .chip:hover { background: var(--sage-deep); color: var(--paper); }
 .chip:hover::before { background: var(--gold); }
 
+/* ---------- partners carousel ---------- */
+.partner-strip { padding-top: clamp(24px, 3vw, 40px); }
+.partner-head { margin-bottom: clamp(28px, 4vw, 40px); max-width: 760px; }
+.partner-carousel { overflow: hidden; padding-block: 8px; }
+.partner-track {
+  display: flex; gap: clamp(16px, 2vw, 24px); width: max-content;
+  animation: partner-scroll 28s linear infinite; will-change: transform;
+}
+.partner-item {
+  flex: 0 0 auto; min-width: clamp(140px, 16vw, 190px); min-height: 92px; padding: 18px 22px;
+  background: rgba(255,255,255,.72); border: 1px solid var(--line); border-radius: 3px;
+  box-shadow: var(--shadow-sm); display: grid; place-items: center;
+}
+.partner-item img {
+  max-height: 56px; width: auto; object-fit: contain; filter: grayscale(1); opacity: .9;
+  transition: transform .2s ease, filter .2s ease, opacity .2s ease;
+}
+.partner-item:hover img {
+  filter: grayscale(0); opacity: 1; transform: translateY(-2px);
+}
+.partner-carousel:hover .partner-track { animation-play-state: paused; }
+
+@keyframes partner-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 680px) {
+  .partner-item { min-width: 132px; min-height: 84px; padding: 16px 18px; }
+  .partner-item img { max-height: 46px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-track { animation: none; }
+  .partner-carousel { overflow-x: auto; }
+}
+
 /* ---------- footer ---------- */
 .footer { background: var(--ink); color: var(--paper); padding-block: 70px 36px; position: relative; }
 .footer a { color: var(--paper); opacity: .8; }

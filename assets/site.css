@@ -176,7 +176,7 @@ section { position: relative; }
 .partner-carousel { overflow: hidden; padding-block: 8px; }
 .partner-track {
   display: flex; gap: clamp(16px, 2vw, 24px); width: max-content;
-  animation: partner-scroll 28s linear infinite; will-change: transform;
+  animation: partner-scroll 60s linear infinite; will-change: transform;
 }
 .partner-item {
   flex: 0 0 auto; min-width: clamp(140px, 16vw, 190px); min-height: 92px; padding: 18px 22px;

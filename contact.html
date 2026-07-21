@@ -61,24 +61,19 @@
   <div class="wrap two-col" style="gap:clamp(30px,5vw,60px);">
     <!-- form -->
     <div class="reveal">
-      <h2 style="margin-bottom:8px;">Send a brief</h2>
-      <p class="muted" style="margin-bottom:24px;">A few lines is plenty to get started.</p>
-      <form class="form-card" id="briefForm" novalidate>
-        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="need">What do you need?</label>
-          <select id="need" name="need">
-            <option>Testing &amp; Security</option>
-            <option>Development (web / mobile / ecommerce)</option>
-            <option>3D Design &amp; Animation</option>
-            <option>Compliance (SOC 2 / ISO / GDPR / HIPAA / PCI)</option>
-            <option>A mix — not sure yet</option>
-          </select>
-        </div>
-        <div class="field"><label for="msg">About the project</label><textarea id="msg" name="msg" placeholder="What are you building, and what's the hard part?"></textarea></div>
-        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Send brief <span class="arr">→</span></button>
-        <p class="form-note" id="formNote">Prefer Upwork? <a href="https://www.upwork.com/agencies/2049941936844943993/" target="_blank" rel="noopener" style="color:var(--red-deep);font-weight:600;">Book a call there ↗</a></p>
-      </form>
+      <h2 style="margin-bottom:8px;">Fill out our Google Form</h2>
+      <p class="muted" style="margin-bottom:24px;">Use the form below to share your project details and we’ll follow up.</p>
+      <div class="form-card" style="padding:0;overflow:hidden;">
+        <iframe
+          id="googleFormEmbed"
+          title="Sunstar Macedon contact form"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSecKAoN-b4HsTH7B-SIMVviIkp-LZhbf23r5_MLxqIAvq8XYg/viewform?usp=publish-editor"
+          loading="lazy"
+          style="width:100%;min-height:920px;border:0;"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="form-note">Replace the form URL above with your published Google Form link if you already have one.</p>
     </div>
     <!-- aside -->
     <aside class="contact-aside reveal" data-d="1">
@@ -111,39 +106,5 @@
 
 <script src="assets/sunstar.js"></script>
 <script src="assets/site.js"></script>
-<script>
-  document.getElementById('briefForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var need = document.getElementById('need').value;
-    var msg = document.getElementById('msg').value.trim();
-    var note = document.getElementById('formNote');
-
-    if (!name || !email) {
-      note.innerHTML = '<span style="color:var(--red-deep);font-weight:600;">Please add your name and email so we can reply.</span>';
-      return;
-    }
-
-    var recipient = 'hello@sunstarmacedon.com';
-    var subject = 'New brief from ' + name.replace(/[\r\n<>]/g, '');
-    var body = [
-      'Name: ' + name,
-      'Email: ' + email,
-      'Need: ' + need,
-      '',
-      'Project details:',
-      msg || 'No details provided.'
-    ].join('\n');
-
-    var mailtoLink = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-    this.innerHTML = '<div style="text-align:center;padding:30px 10px;"><div class="seal-sm center" id="thanksMark" style="width:72px;margin-bottom:18px;"></div><h3 style="font-size:1.5rem;margin-bottom:10px;">Thanks, ' + name.replace(/[<>]/g,'') + '.</h3><p style="color:var(--ink-soft);margin-bottom:20px;">Your brief is being prepared for delivery. If your mail app does not open, email us directly at <a href="mailto:' + recipient + '" style="color:var(--red-deep);font-weight:600;">' + recipient + '</a>.</p><a class="btn btn-primary" href="https://www.upwork.com/agencies/2049941936844943993/" target="_blank" rel="noopener" style="justify-content:center;">Book a call now →</a></div>';
-
-    if (window.sunstarSVG) document.getElementById('thanksMark').innerHTML = window.sunstarSVG({ size: 72, detail: false });
-
-    window.location.href = mailtoLink;
-  });
-</script>
 </body>
 </html>

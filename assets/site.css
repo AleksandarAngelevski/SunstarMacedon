@@ -537,6 +537,15 @@ html.reveal-off .reveal { opacity: 1 !important; transform: none !important; tra
 .form-card { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: clamp(28px, 4vw, 44px); position: relative; }
 .form-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 7px;
   background: repeating-linear-gradient(90deg, var(--red) 0 9px, var(--paper) 9px 12px); }
+.form-card--embed { padding: 0; overflow: visible; border: 0; background: transparent; }
+.form-card--embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 1600px;
+  height: 1800px;
+  border: 0;
+  background: transparent;
+}
 .field { margin-bottom: 20px; }
 .field label { display: block; font-family: var(--mono); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
 .field input, .field select, .field textarea { width: 100%; font-family: var(--sans); font-size: 1rem; color: var(--ink);

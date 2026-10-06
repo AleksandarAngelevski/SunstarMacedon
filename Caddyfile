@@ -1,0 +1,30 @@
+{
+	admin off
+	auto_https off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+
+	# Old /page.html URLs redirect to the clean /page (index.html is left alone)
+	@htmlext {
+		path_regexp htmlext ^(.+)\.html$
+		not path /index.html
+	}
+	redir @htmlext {re.htmlext.1} 301
+
+	# Custom mappings: public URL -> real file (URL in the browser stays the same)
+	# rewrite /team /people/staff.html
+
+	# /about -> about.html, /about/ -> about/index.html
+	try_files {path} {path}.html {path}/index.html
+
+	file_server
+
+	# Optional: serve public/404.html for missing pages
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
